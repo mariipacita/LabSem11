@@ -45,6 +45,9 @@ public class CalculadoraControl {
 
     return modelo.borrar(numero);
 }
+    public double igualC() {
+    return modelo.getResultado();
+}
    public void reiniciarC() {
 
     modelo.reiniciar();
