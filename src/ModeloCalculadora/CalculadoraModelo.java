@@ -4,6 +4,9 @@
  */
 package ModeloCalculadora;
 
+import excepcionesCalc.DivisionEntreCeroException;
+import excepcionesCalc.ValorInvalidoException;
+
 /**
  *
  * @author PC
@@ -20,9 +23,7 @@ public class CalculadoraModelo {
         this.operacion = "+";
         
     }
-
-   
-    
+ 
     public double getResultado() {
         return resultado;
     }
@@ -47,31 +48,48 @@ public class CalculadoraModelo {
         this.operacion = operacion;
     }
     
-   public void sumar(){
+   public void sumar()throws ValorInvalidoException{
+       validarValor();
        resultado+=valor;
    } 
-   public void restar(){
+   public void restar()throws ValorInvalidoException{
+       validarValor();
        resultado-=valor;
    }
-   public void multiplicar(){
+   public void multiplicar()throws ValorInvalidoException{
+       validarValor();
        resultado*=valor;
    }
    
-   public void divir(){
+   public void dividir()throws ValorInvalidoException, DivisionEntreCeroException{
+       validarValor();
+       if (valor == 0) {
+        throw new DivisionEntreCeroException(
+                "No se puede dividir entre cero."
+        );
+    }
        resultado/=valor;
    }
+   
+   public void validarValor() throws ValorInvalidoException {
+
+    if (Double.isNaN(valor)) {
+        throw new ValorInvalidoException("Valor no válido.");
+    }
+}
+   
      public String borrar(String numero) {
 
     if (numero.length() > 0) {
         return numero.substring(0, numero.length() - 1);
     }
-
     return "";
 }
    
     public void reiniciar(){
-         this.resultado = 0;
+        this.resultado = 0;
         this.valor = 0;
+        this.operacion = "+";
     }
     
     
