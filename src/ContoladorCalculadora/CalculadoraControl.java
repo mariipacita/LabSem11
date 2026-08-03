@@ -6,6 +6,7 @@ package ContoladorCalculadora;
  import ModeloCalculadora.CalculadoraModelo;
 import excepcionesCalc.DivisionEntreCeroException;
 import excepcionesCalc.ValorInvalidoException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author PC
@@ -17,32 +18,69 @@ public class CalculadoraControl {
     public CalculadoraControl(CalculadoraModelo modelo) {
         this.modelo = modelo;
     }
-   
-   
     
-    
-    
-    
-   public void sumaC(double valor) throws ValorInvalidoException {
+   public void SumaC(double valor) {
 
-    modelo.setValor(valor);
-    modelo.sumar();
-}
-   public void restaC(double valor) throws ValorInvalidoException {
+    try {
+        modelo.setValor(valor);
+        modelo.sumar();
 
-    modelo.setValor(valor);
-    modelo.restar();
+    } catch (ValorInvalidoException e) {
+        JOptionPane.showMessageDialog(
+                null,
+                e.getMessage()
+        );
+    }
 }
-    public void multiplicarC(double valor) throws ValorInvalidoException {
 
-    modelo.setValor(valor);
-    modelo.multiplicar();
+   public void restaC(double valor) {
+
+    try {
+        modelo.setValor(valor);
+        modelo.restar();
+
+    } catch (ValorInvalidoException e) {
+        JOptionPane.showMessageDialog(
+                null,
+                e.getMessage()
+        );
+    }
+}
+    public void multiplicarC(double valor) {
+
+    try {
+        modelo.setValor(valor);
+        modelo.multiplicar();
+
+    } catch (ValorInvalidoException e) {
+        JOptionPane.showMessageDialog(
+                null,
+                e.getMessage()
+        );
+    }
 }
     
-    public void dividirC(double valor) throws ValorInvalidoException, DivisionEntreCeroException{
+    public void dividirC(double valor) {
+
+    try {
         modelo.setValor(valor);
         modelo.dividir();
+
+    } catch (DivisionEntreCeroException e) {
+
+        JOptionPane.showMessageDialog(
+                null,
+                e.getMessage()
+        );
+
+    } catch (ValorInvalidoException e) {
+
+        JOptionPane.showMessageDialog(
+                null,
+                e.getMessage()
+        );
     }
+}
     public String borrarC(String numero) {
 
     return modelo.borrar(numero);
@@ -53,81 +91,6 @@ public class CalculadoraControl {
    public void reiniciarC() {
 
     modelo.reiniciar();
-} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+}     
     
 }
