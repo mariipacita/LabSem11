@@ -113,6 +113,7 @@ public class VistaCalc extends javax.swing.JFrame {
         btnSigno.addActionListener(this::btnSignoActionPerformed);
 
         btn0.setText("0");
+        btn0.addActionListener(this::btn0ActionPerformed);
 
         btnPunto.setText(".");
         btnPunto.addActionListener(this::btnPuntoActionPerformed);
@@ -378,6 +379,13 @@ public class VistaCalc extends javax.swing.JFrame {
         txtPantalla.setText(txtPantalla.getText() + "9");
     }
     }//GEN-LAST:event_btn9ActionPerformed
+
+    private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
+        // TODO add your handling code here:
+        if(txtPantalla.getText().equals("0")){
+    txtPantalla.setText("0");
+}
+    }//GEN-LAST:event_btn0ActionPerformed
 
     /**
      * @param args the command line arguments
