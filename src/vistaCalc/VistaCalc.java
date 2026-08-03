@@ -5,6 +5,7 @@
 package vistaCalc;
 import ContoladorCalculadora.CalculadoraControl;
 import ModeloCalculadora.CalculadoraModelo;
+import excepcionesCalc.ValorInvalidoException;
 /**
  *
  * @author marii
@@ -254,7 +255,11 @@ public class VistaCalc extends javax.swing.JFrame {
         // TODO add your handling code here:
           double numero = Double.parseDouble(txtPantalla.getText());
 
-    controlador.multiplicarC(numero);
+        try {
+            controlador.multiplicarC(numero);
+        } catch (ValorInvalidoException ex) {
+            System.getLogger(VistaCalc.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
 
     txtPantalla.setText("");
         
@@ -296,7 +301,7 @@ public class VistaCalc extends javax.swing.JFrame {
 
     private void btnCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCEActionPerformed
         // TODO add your handling code here:
-       
+       txtPantalla.setText("0");
     }//GEN-LAST:event_btnCEActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
