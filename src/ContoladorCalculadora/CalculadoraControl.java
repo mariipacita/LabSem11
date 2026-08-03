@@ -4,6 +4,8 @@
  */
 package ContoladorCalculadora;
  import ModeloCalculadora.CalculadoraModelo;
+import excepcionesCalc.DivisionEntreCeroException;
+import excepcionesCalc.ValorInvalidoException;
 /**
  *
  * @author PC
@@ -21,25 +23,25 @@ public class CalculadoraControl {
     
     
     
-   public void sumaC(double valor) {
+   public void sumaC(double valor) throws ValorInvalidoException {
 
     modelo.setValor(valor);
     modelo.sumar();
 }
-   public void restaC(double valor) {
+   public void restaC(double valor) throws ValorInvalidoException {
 
     modelo.setValor(valor);
     modelo.restar();
 }
-    public void multiplicarC(double valor) {
+    public void multiplicarC(double valor) throws ValorInvalidoException {
 
     modelo.setValor(valor);
     modelo.multiplicar();
 }
     
-    public void dividirC(double valor){
+    public void dividirC(double valor) throws ValorInvalidoException, DivisionEntreCeroException{
         modelo.setValor(valor);
-        modelo.divir();
+        modelo.dividir();
     }
     public String borrarC(String numero) {
 
