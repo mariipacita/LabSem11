@@ -279,7 +279,7 @@ public class VistaCalc extends javax.swing.JFrame {
         // TODO add your handling code here:
         double numero = Double.parseDouble(txtPantalla.getText());
 
-    controlador.sumaC(numero);
+    controlador.SumaC(numero);
 
     txtPantalla.setText("");
     }//GEN-LAST:event_btnSumaActionPerformed
