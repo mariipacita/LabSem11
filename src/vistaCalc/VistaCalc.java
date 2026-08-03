@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vistaCalc;
-
+import ContoladorCalculadora.CalculadoraControl;
 /**
  *
  * @author marii
@@ -11,12 +11,14 @@ package vistaCalc;
 public class VistaCalc extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaCalc.class.getName());
+    private CalculadoraControl controlador;
 
     /**
      * Creates new form VistaCalc
      */
     public VistaCalc() {
         initComponents();
+         this.controlador = controlador;
     }
 
     /**
@@ -71,6 +73,7 @@ public class VistaCalc extends javax.swing.JFrame {
         btn9.setText("9");
 
         btnMultiplicacion.setText("x");
+        btnMultiplicacion.addActionListener(this::btnMultiplicacionActionPerformed);
 
         btn4.setText("4");
 
@@ -205,6 +208,13 @@ public class VistaCalc extends javax.swing.JFrame {
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnIgualActionPerformed
+
+    private void btnMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacionActionPerformed
+        // TODO add your handling code here:
+        controlador.multiplicarC(ERROR);
+        
+        
+    }//GEN-LAST:event_btnMultiplicacionActionPerformed
 
     /**
      * @param args the command line arguments
