@@ -56,68 +56,90 @@ public class VistaCalc extends javax.swing.JFrame {
         btnIgual = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 204, 204));
 
         txtPantalla.setEditable(false);
+        txtPantalla.setBackground(new java.awt.Color(204, 204, 204));
         txtPantalla.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtPantalla.setText("0");
 
+        btnBorrarTodo.setBackground(new java.awt.Color(255, 204, 204));
         btnBorrarTodo.setText("AC");
         btnBorrarTodo.addActionListener(this::btnBorrarTodoActionPerformed);
 
+        btnCE.setBackground(new java.awt.Color(255, 204, 204));
         btnCE.setText("CE");
         btnCE.addActionListener(this::btnCEActionPerformed);
 
+        btnBorrar.setBackground(new java.awt.Color(255, 204, 204));
         btnBorrar.setText("←");
         btnBorrar.addActionListener(this::btnBorrarActionPerformed);
 
+        btnDivision.setBackground(new java.awt.Color(255, 204, 204));
         btnDivision.setText("/");
         btnDivision.addActionListener(this::btnDivisionActionPerformed);
 
+        btn7.setBackground(new java.awt.Color(255, 204, 204));
         btn7.setText("7");
         btn7.addActionListener(this::btn7ActionPerformed);
 
+        btn8.setBackground(new java.awt.Color(255, 204, 204));
         btn8.setText("8");
         btn8.addActionListener(this::btn8ActionPerformed);
 
+        btn9.setBackground(new java.awt.Color(255, 204, 204));
         btn9.setText("9");
         btn9.addActionListener(this::btn9ActionPerformed);
 
+        btnMultiplicacion.setBackground(new java.awt.Color(255, 204, 204));
         btnMultiplicacion.setText("x");
         btnMultiplicacion.addActionListener(this::btnMultiplicacionActionPerformed);
 
+        btn4.setBackground(new java.awt.Color(255, 204, 204));
         btn4.setText("4");
         btn4.addActionListener(this::btn4ActionPerformed);
 
+        btn5.setBackground(new java.awt.Color(255, 204, 204));
         btn5.setText("5");
         btn5.addActionListener(this::btn5ActionPerformed);
 
+        btn6.setBackground(new java.awt.Color(255, 204, 204));
         btn6.setText("6");
         btn6.addActionListener(this::btn6ActionPerformed);
 
+        btnResta.setBackground(new java.awt.Color(255, 204, 204));
         btnResta.setText("-");
         btnResta.addActionListener(this::btnRestaActionPerformed);
 
+        btn1.setBackground(new java.awt.Color(255, 204, 204));
         btn1.setText("1");
         btn1.addActionListener(this::btn1ActionPerformed);
 
+        btn2.setBackground(new java.awt.Color(255, 204, 204));
         btn2.setText("2");
         btn2.addActionListener(this::btn2ActionPerformed);
 
+        btn3.setBackground(new java.awt.Color(255, 204, 204));
         btn3.setText("3");
         btn3.addActionListener(this::btn3ActionPerformed);
 
+        btnSuma.setBackground(new java.awt.Color(255, 204, 204));
         btnSuma.setText("+");
         btnSuma.addActionListener(this::btnSumaActionPerformed);
 
+        btnSigno.setBackground(new java.awt.Color(255, 204, 204));
         btnSigno.setText("+/-");
         btnSigno.addActionListener(this::btnSignoActionPerformed);
 
+        btn0.setBackground(new java.awt.Color(255, 204, 204));
         btn0.setText("0");
         btn0.addActionListener(this::btn0ActionPerformed);
 
+        btnPunto.setBackground(new java.awt.Color(255, 204, 204));
         btnPunto.setText(".");
         btnPunto.addActionListener(this::btnPuntoActionPerformed);
 
+        btnIgual.setBackground(new java.awt.Color(255, 204, 204));
         btnIgual.setText("=");
         btnIgual.addActionListener(this::btnIgualActionPerformed);
 
