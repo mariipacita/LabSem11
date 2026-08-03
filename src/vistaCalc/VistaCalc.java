@@ -255,11 +255,7 @@ public class VistaCalc extends javax.swing.JFrame {
         // TODO add your handling code here:
           double numero = Double.parseDouble(txtPantalla.getText());
 
-        try {
-            controlador.multiplicarC(numero);
-        } catch (ValorInvalidoException ex) {
-            System.getLogger(VistaCalc.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-        }
+          controlador.multiplicarC(numero);
 
     txtPantalla.setText("");
         
