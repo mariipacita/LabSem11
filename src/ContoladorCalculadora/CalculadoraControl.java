@@ -20,51 +20,51 @@ public class CalculadoraControl {
     }
     
    public void SumaC(double valor) {
-
-    try {
-        modelo.setValor(valor);
-        modelo.sumar();
-
-    } catch (ValorInvalidoException e) {
-        JOptionPane.showMessageDialog(
-                null,
-                e.getMessage()
-        );
-    }
+    modelo.setResultado(valor);
+    modelo.setOperacion("+");
 }
 
-   public void restaC(double valor) {
-
-    try {
-        modelo.setValor(valor);
-        modelo.restar();
-
-    } catch (ValorInvalidoException e) {
-        JOptionPane.showMessageDialog(
-                null,
-                e.getMessage()
-        );
-    }
+  public void restaC(double valor) {
+    modelo.setResultado(valor);
+    modelo.setOperacion("-");
 }
+  
     public void multiplicarC(double valor) {
-
-    try {
-        modelo.setValor(valor);
-        modelo.multiplicar();
-
-    } catch (ValorInvalidoException e) {
-        JOptionPane.showMessageDialog(
-                null,
-                e.getMessage()
-        );
-    }
+    modelo.setResultado(valor);
+    modelo.setOperacion("*");
 }
     
     public void dividirC(double valor) {
+    modelo.setResultado(valor);
+    modelo.setOperacion("/");
+}
+    public String borrarC(String numero) {
+
+    return modelo.borrar(numero);
+}
+    public double igualC(double valor) {
 
     try {
         modelo.setValor(valor);
-        modelo.dividir();
+
+        switch (modelo.getOperacion()) {
+
+            case "+":
+                modelo.sumar();
+                break;
+
+            case "-":
+                modelo.restar();
+                break;
+
+            case "*":
+                modelo.multiplicar();
+                break;
+
+            case "/":
+                modelo.dividir();
+                break;
+        }
 
     } catch (DivisionEntreCeroException e) {
 
@@ -80,12 +80,6 @@ public class CalculadoraControl {
                 e.getMessage()
         );
     }
-}
-    public String borrarC(String numero) {
-
-    return modelo.borrar(numero);
-}
-    public double igualC() {
     return modelo.getResultado();
 }
    public void reiniciarC() {
