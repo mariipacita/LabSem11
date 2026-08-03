@@ -13,10 +13,12 @@ public class CalculadoraModelo {
     private double valor;
     private String operacion;
 
-    public CalculadoraModelo(double resultado, double valor, String operacion) {
+
+    public CalculadoraModelo() {
         this.resultado = 0;
         this.valor = 0;
         this.operacion = "+";
+        
     }
 
    
@@ -52,17 +54,26 @@ public class CalculadoraModelo {
        resultado-=valor;
    }
    public void multiplicar(){
-       resultado-=valor;
+       resultado*=valor;
    }
    
    public void divir(){
        resultado/=valor;
    }
+     public String borrar(String numero) {
+
+    if (numero.length() > 0) {
+        return numero.substring(0, numero.length() - 1);
+    }
+
+    return "";
+}
    
     public void reiniciar(){
          this.resultado = 0;
         this.valor = 0;
     }
+    
     
     
     
