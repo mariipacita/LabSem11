@@ -5,7 +5,6 @@
 package vistaCalc;
 import ContoladorCalculadora.CalculadoraControl;
 import ModeloCalculadora.CalculadoraModelo;
-import excepcionesCalc.ValorInvalidoException;
 /**
  *
  * @author marii
@@ -216,18 +215,6 @@ public class VistaCalc extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
- 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     private void btnSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignoActionPerformed
         // TODO add your handling code here:
          double numero = Double.parseDouble(txtPantalla.getText());
@@ -245,9 +232,11 @@ public class VistaCalc extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPuntoActionPerformed
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
-        // TODO add your handling code here:
-        txtPantalla.setText(
-        String.valueOf(controlador.igualC())
+
+      double numero = Double.parseDouble(txtPantalla.getText());
+
+    txtPantalla.setText(
+        String.valueOf(controlador.igualC(numero))
     );
     }//GEN-LAST:event_btnIgualActionPerformed
 
